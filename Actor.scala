@@ -62,7 +62,7 @@ object Actor {
         override def stop: F[Unit] =
           for {
             state <- stateRef.get
-            _ <- finalizer.dispose(state)
+            _ <- finalizer.dispose(states)
             _ <- consumer.cancel
           } yield ()
       }
