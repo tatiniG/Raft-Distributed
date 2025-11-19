@@ -38,7 +38,7 @@ object Actor {
         _ <- logger.trace(s"Processing received message")
         result <- messageHandler.receive(state, msg, actor)(sender, c)
         (newState, output) = result
-        _ <- stateRef.set(newState) *> deferred.complete(outputS)
+        _ <- stateRef.set(newState) *> deferred.complete(output)
       } yield ()
 
     for {
