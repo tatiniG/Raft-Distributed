@@ -20,7 +20,7 @@ trait Actor[F[_], M[+ _]] {
 
 object Actor {
 
-  private type ActorMessage[F[_], M[+ _], B] = (M[A], Deferred[F, A], Actor[F, M], Actor[F, M])
+  private type ActorMessage[F[_], M[+ _], A] = (M[A], Deferred[F, A], Actor[F, M], Actor[F, M])
 
   def apply[F[_], M[+ _], S](initialState: S,
                              messageHandler: MessageHandler[F, M, S],
