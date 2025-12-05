@@ -2,7 +2,7 @@ package com.nebtrx.raft
 
 sealed trait Message[+ _]
 
-final case class AppendEntry(term: Term, entry: Entry) extends Message[Unit]
+final case class AppendEntry(term: Term, entrys: Entrys) extends Message[Unit]
 
 final case class ProcessAppendResponse(currentTerm: Term, success: Boolean) extends Message[Unit]
 
