@@ -9,7 +9,7 @@ import cats.syntax.functor._
 import com.nebtrx.functional_actors.syntax._
 import fs2.concurrent.Queue
 import io.chrisdavenport.log4cats.Logger
-
+import fs2.concurrent.Queue
 
 trait Actor[F[_], M[+ _]] {
 
