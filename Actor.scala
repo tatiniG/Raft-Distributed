@@ -9,7 +9,7 @@ import cats.syntax.functor._
 import com.nebtrx.functional_actors.syntax._
 import fs2.concurrent.Queue
 import io.chrisdavenport.log4cats.Logger
-import cats.effect.Concurrent
+
 trait Actor[F[_], M[+ _]] {
 
   def ![A](fa: M[A])(implicit sender: Actor[F, M] = this): F[A]
