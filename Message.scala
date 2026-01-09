@@ -1,5 +1,5 @@
 package com.nebtrx.raft
-package com.nebtrx.raft
+
 sealed trait Message[+ _]
 
 final case class AppendEntry(term: Term, entry: Entry) extends Message[Unit]
